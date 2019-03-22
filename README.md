@@ -1,0 +1,24 @@
+
+# To knows
+This program contains a linux library, the reason I included this library was because 
+there is a way to make a users input invisible and that is ideal when playing hangman because 
+it would defeat the purpose of playing with someone in the same room.
+
+# Inspiration
+I like the game of hangman, and decided to make it after my first programming class, I primarily made this game to 
+play with my nephews.
+
+# Features                                                      
+- 1v1 Play                                                                                           
+- AI choosing a word for you to guess                                                                 
+- COMING SOON!!! Adding a way for the computer to guess a word you have                                       
+
+# Bugs 
+Bug Fix: 03/06/2019
+- Since I was improperly clearing a set if someone happened to use the same word again it would pick a random character in that string and wouldnt allow you to use it, so in turn never ending the game                                                        
+
+Bug Fixes: 10/22/2018
+- An infinite loop if someone entered a space as a secret word
+- If someone entered a capital letter as a secret word, the program would 
+be expecting a capital letter from the guesser.
+
