@@ -25,7 +25,6 @@ int Thegame::displayHiddenWord()
 
 // function : TryLetters
 // purpose : the bread and butter of hangman guessing the letters
-
 void Thegame::tryLetters()
 {
 
@@ -102,7 +101,6 @@ void Thegame::tryLetters()
 
 // function : AiWord
 // purpose : to generate a random word using files
-
 string Thegame::AiWord()
 {
   vector<string> theVector;
@@ -139,8 +137,8 @@ bool Thegame::checkSet(set<char> mySet, char x)
 
 // function : storetheword
 // purpose : storing the secret word
-void Thegame::storetheword(
-    string x) // simply placing the secret phrase in a private variable
+// simply placing the secret phrase in a private variable
+void Thegame::storetheword(string x) 
 {
   response = x;
   while (response == " ")
@@ -163,9 +161,8 @@ void Thegame::storetheword(
 }
 
 // function : resetWord
-// purpose : should have been called reset everytihing because resetting
-// everything
-void Thegame::resetword() // resetting the word and dashes back to its original nature for multiple attempts
+// purpose : Refreshes everything to a new game 
+void Thegame::resetword()
 {
   mySet.clear();
   response = "";

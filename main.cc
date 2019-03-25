@@ -24,11 +24,11 @@ int main()
     {
         cout << "Hello, my name is "<<CYAN<<"Babacar Ndoye "<<WHITE<<"and WELCOME TO MY GAME OF HANGMAN!!!!!!!!! " << endl;
         cout<<endl;
-        cout<<RED<<"RULE#1:"<<WHITE<< "This is a 2+ player game"<<endl;
+        cout<<RED<<"RULE #1:"<<WHITE<< "This can be a 2+ player game or single player game"<<endl;
         cout<<"When you are past this screen: Select choice #1 and follow the directions."<<endl;
         cout<<"GOOD LUCK!!!!"<<endl;
         cout<<endl;
-        cout<<YELLOW<<"Once you ready,press any key to continue"<<WHITE<<endl;
+        cout<<YELLOW<<"Once you are ready,press any key and ENTER continue"<<WHITE<<endl;
         cin>>ans;
         system("clear");
     }
