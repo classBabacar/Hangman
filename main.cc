@@ -67,7 +67,7 @@ int main() {
     }
     else if (choice == 2) {
       
-      cout << "\tEnter a topic for the player who is guessing" << endl;
+      cout << "\tEnter a topic for the guessing player : " << endl;
       cin.ignore();
       cout << "\t";
       getline(cin, topic);
