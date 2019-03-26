@@ -3,22 +3,19 @@
 
 // Function : DisplayHiddenWord
 // Purpose : To display the word as a combination of (-) example:dog as  (---)
-int Thegame::displayHiddenWord() {
+void Thegame::displayHiddenWord() {
   if (topic != "") {
     cout << "\tThe Topic is : " << topic << endl;
     cout << endl;
   }
-  int showncounter = 0;
   for (int i = 0; i < (int)response.length(); i++) {
     if (isalnum(response[i])) {
       shown = shown + "-"; // keeping track of user letters
-      showncounter++;
     } else {
       shown = shown + response[i]; // If the character is not a letter
     }
   }
-  cout << "\t" << shown << endl;
-  return showncounter; // this return is important we can determine the size of the unknown the dashes
+  cout << "\t" << shown << endl; // diplaying hidden word
 }
 
 // function : TryLetters
@@ -26,22 +23,38 @@ int Thegame::displayHiddenWord() {
 void Thegame::tryLetters() {
 
   bool loop = true;
-  // going to be used to match letters in word
-  int showncounter = displayHiddenWord(); // in function display hidden word that return
+  bool guessCapture = false; // if user attempts to guess make display
+  displayHiddenWord(); // in function display hidden word that return
 
   while (loop) {
+     
     bool tracker = false; // used to keep track of the tries 
-    int showntracker = 0; // this is used to keep track of the revised hashes to win the game
 
     char letter;
-    cout << "\tWhat letter do you think is here? or enter (?) to leave" << endl;
+    cout << "\tGuess a letter that you think is in the phrase or enter (?) to guess the word" << endl;
     cout << "\t";
     cin >> letter;
 
     if (letter == '?') // leaving
     {
+      cout << "\tWhat do you think the secret word is : " << endl;
+      string theirGuess;
+      cin.ignore();
+      cout << "\t";
+      getline(cin, theirGuess);
+
+      if(theirGuess == response){
+      guessCapture = true; //if user gets it correct you dont want it to show 2 winning screens
+      cout << "\tSecret Word: " << RED << response << WHITE << endl;
+      cout << CYAN << "\tCONGRATS YOU WIN!!!" << WHITE << endl;
+      cout << "\tTry the game again... Thank you" << endl;
       loop = false;
-    } else if (checkSet( mySet, letter)) // checking if the letter hasn't been used before
+      tracker = true;
+      shown = response;
+      resetword();
+      }
+
+    } else if (checkSet( mySet, letter )) // checking if the letter hasn't been used before
     {
       mySet.insert(letter); // input letter into set
 
@@ -62,17 +75,17 @@ void Thegame::tryLetters() {
       addTries();
       hangmandrawing();
     }
-
-    if (shown == response) // if you hit the last step in guessing letter
+    
+    //this if is purely for those individuals that guessed with characters
+    //not the string as a whole
+    if (shown == response && guessCapture == false) // if you hit the last step in guessing letter
     {
       loop = false;
-      cout << "\tSecret Word: " << response << endl;
-      cout << "\tCONGRATS YOU WIN!!!" << endl;
+      cout << "\tSecret Word: " << RED << response <<WHITE<< endl;
+      cout << CYAN << "\tCONGRATS YOU WIN!!!" << WHITE << endl;
       cout << "\tTry the game again... Thank you" << endl;
       resetword();
-    } else if (tries > 0 && showntracker != 0 && shown != response) {
-      cout << "\tYou have " << tries << " tries left." << endl;
-    }
+    } 
     cout << "\t" << shown << endl;
     if (tries == 0) {
       loop = false;

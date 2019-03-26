@@ -19,6 +19,7 @@ public:
     tries = 7;
     shown = "";
     topic = "";
+    response = "";
   }
  
   void resetword(); // A function used to restore the hangman word for multiple uses
@@ -29,7 +30,7 @@ public:
   void setTopic(string x);
   
   
-  int displayHiddenWord(); //keeping track of how many letters user gets correct
+  void displayHiddenWord(); //keeping track of how many letters user gets correct
 
   bool checkSet(set<char> mySet, char x);
   string AiWord();
