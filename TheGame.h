@@ -18,20 +18,22 @@ public:
   Thegame() {
     tries = 7;
     shown = "";
+    topic = "";
   }
+ 
   void resetword(); // A function used to restore the hangman word for multiple uses
   void hangmandrawing(); // A function used to draw the hangman figure
-  void tryLetters();     // function that used the different letters used in the
-                     // hangman setting
-  void storetheword(string HangmanWord); // this function stores the word in the
-                                         // private variable making it
-                                         // untouchable
+  void tryLetters();  //guessing letters function
+  void storetheword(string HangmanWord); //storing a users secret word
   void addTries();
-  int displayHiddenWord();
+  void setTopic(string x);
+  
+  
+  int displayHiddenWord(); //keeping track of how many letters user gets correct
 
   bool checkSet(set<char> mySet, char x);
   string AiWord();
-  void completehangman();
+  
 
 private:
   set<char> mySet;
@@ -39,4 +41,5 @@ private:
   int showncounter;
   string response; // This stores the users secret word
   string shown; // This is used to show user how far they have gotten in guessing
+  string topic;
 };
