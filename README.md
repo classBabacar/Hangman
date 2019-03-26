@@ -18,7 +18,9 @@ Bug Fix: 03/26/2019
 - If someone entered a empty string it would accept their secret word so to fix this problem I just ask them again
 
 Bug Fix: 03/06/2019
-- Since I was improperly clearing a set if someone happened to use the same word again it would pick a random character in that string and wouldnt allow you to use it, so in turn never ending the game                                                        
+- Since I was improperly clearing a set if someone happened to use the same word again it would pick a random character in that string and wouldnt allow you to use it, so in turn never ending the game           
+
+
 Bug Fix: 10/22/2018
 - An infinite loop if someone entered a space as a secret word
 - If someone entered a capital letter as a secret word, the program would expect a capital letter from the guesser.
