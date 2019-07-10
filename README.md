@@ -27,3 +27,13 @@ Bug Fix: **7/9/2019 (Complete Remodel)**
 - Complete re-model of what I wrote before it was really hard to maintain also there was a huge bug where if a secretWord was "bob" and I decided to guess with the word
 "Bob" this would be incorrect in the computers eyes.
 
+# Running Code using Makefile
+
+I recommend that you compile with ``make build``
+
+Run the program with ``./game``
+
+To delete the ``./game`` do:
+
+ ``make clean``
+
