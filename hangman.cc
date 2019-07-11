@@ -93,15 +93,14 @@ string hangman::captureUserGuess()
 
 void hangman::winnerMessage()
 {
-  cout << BLUE << "\tCongrats!! The Secret Word was : " << RED << secretWord << WHITE << endl;
-  cout << "\tTry the game again...Thank you" << endl;
+  cout << YELLOW << "\tCongrats! You guessed the secret word it was : " << GREEN << secretWord << WHITE << endl;
+  cout << "\tThank you for playing." << endl;
 }
 
 void hangman::loserMessage()
 {
-  cout << "\tSorry, you lose." << endl;
-  cout << "\tTHE SECRET WORD WAS: " << RED << secretWord << WHITE << endl;
-  cout << "\tTry the game again...Thank you." << endl;
+  cout << "\tSorry, you lose the secret word was : " << GREEN << secretWord << WHITE << endl;
+  cout << "\tThank you for playing." << endl;
 }
 
 //************************************************************************
