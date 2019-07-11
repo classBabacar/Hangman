@@ -94,8 +94,7 @@ int main()
         }
         else if (choice == 6)
         {
-            cout << "\tThank you for trying out the game." << endl;
-            cout << "\tPeace!!" << endl;
+            cout << "\tThank you for playing the game I hope you enjoyed it." << endl;
             loop = 0;
         }
     }
