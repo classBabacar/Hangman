@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include <termios.h>
 #include <unistd.h>
+#include <ctype.h>
 
 using namespace std;
 
@@ -37,6 +38,7 @@ public:
   bool doesLetterMatch(char letter, string &displayUser, string secretWord);
   string captureUserGuess();
   char getLetter();
+  bool validateInput(string x);
 
   //AI Function
   string AiWord();
