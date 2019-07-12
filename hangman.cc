@@ -235,7 +235,7 @@ bool hangman::checkSet(set<char> repeatedCharSet, char x)
 void hangman::storeSecretWord(string x)
 {
   secretWord = x;
-  while (secretWord == "")
+  while (secretWord == "" || validateInput(secretWord))
   {
     termios oldt;
     tcgetattr(STDIN_FILENO, &oldt);
@@ -252,6 +252,18 @@ void hangman::storeSecretWord(string x)
   {
     secretWord[i] = tolower(secretWord[i]);
   }
+}
+
+bool hangman::validateInput(string x)
+{
+  for (int i = 0; i < x.size(); ++i)
+  {
+    if (isdigit(x[i]))
+    {
+      return true;
+    }
+  }
+  return false;
 }
 
 void hangman::hangmanDrawing()
